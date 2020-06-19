@@ -11,8 +11,7 @@ public class FolhaPagamento {
         int n;
         int numDeps;
         
-        ArrayList<Concursado> concursados = new ArrayList<>();
-        ArrayList<Temporario> temporarios = new ArrayList<>();
+        ArrayList<Funcionario> funcionarios = new ArrayList<>();
         
         do{
             n = Integer.parseInt(JOptionPane.showInputDialog("Quantos funcionários na empresa? (De 1 a 100)"));
@@ -46,7 +45,7 @@ public class FolhaPagamento {
                         dependentes.add(dep);
                     }
                     Concursado c = new Concursado(codigo, salario, tempo, dependentes);
-                    concursados.add(c);
+                    funcionarios.add(c);
                     
                     break;
                    
@@ -62,26 +61,18 @@ public class FolhaPagamento {
                         dependentes.add(dep);
                     }
                     Temporario t = new Temporario(codigo, salario, tempo, dependentes);
-                    temporarios.add(t);
+                    funcionarios.add(t);
                     
                     break;
                     
             }
         }
         
-        ListIterator<Concursado> c = concursados.listIterator();//getting the Iterator 
-        System.out.println("FUNCIONÁRIOS CONCURSADOS:\n ");
-        while(c.hasNext()){//check if iterator has the elements
-            System.out.println(c.next().dadosFormatados());
+        ListIterator<Funcionario> f = funcionarios.listIterator();//getting the Iterator 
+        System.out.println("FUNCIONÁRIOS:\n ");
+        while(f.hasNext()){//check if iterator has the elements
+            System.out.println(f.next().dadosFormatados());
         }
-        
-        System.out.println("--------------------------------------------------------------");
-        
-        ListIterator<Temporario> t = temporarios.listIterator();//getting the Iterator 
-        System.out.println("FUNCIONÁRIOS TEMPORÁRIOS:\n ");
-        while(t.hasNext()){//check if iterator has the elements
-            System.out.println(t.next().dadosFormatados());
-        } 
         
     }
     

@@ -14,12 +14,14 @@ public class Concursado extends Funcionario{
         super.setSalarioTotal(calculaSalario(salario, tempo));
     }
     
-    private double calculaSalario(double salario, int tempo){
+    @Override
+    public double calculaSalario(double salario, int tempo){
         double numDependentes = super.getDependentesNoLimite(21);
         double salarioTotal = salario + (tempo * 200) + (100 * numDependentes);
         return salarioTotal;
     }
     
+    @Override
     public String dadosFormatados(){
         String dados = "Funcionário com código " + super.getCodigo() + ", concursado, com salário base de R$" + super.getSalarioBase() + ", salário total (com bonificações) de R$" + super.getSalarioTotal() + ", e " + super.getTempo() + " ANOS de contratação.\nO funcionário tem " + super.dependentesSize() + " dependentes, e " + super.getDependentesNoLimite(21) + " estão dentro do limite de idade para que o funcionário receba auxílio salarial.\n";
         return dados;

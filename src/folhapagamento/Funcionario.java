@@ -69,4 +69,13 @@ public class Funcionario {
     public int dependentesSize(){
         return dependentes.size();
     }
+
+    public String dadosFormatados() {
+        return "Funcionario código " + this.codigo + ", com salário base de " + this.salarioBase + " e " + this.dependentes.size() + " dependentes em seu nome.";
+    }
+    
+    public double calculaSalario(double salario, int tempo){
+        return 0;
+    }
+
 }
